@@ -4,7 +4,7 @@
 #
 Name     : trace-cmd
 Version  : 2.7
-Release  : 1
+Release  : 2
 URL      : https://git.kernel.org/pub/scm/linux/kernel/git/rostedt/trace-cmd.git/snapshot/trace-cmd-v2.7.tar.gz
 Source0  : https://git.kernel.org/pub/scm/linux/kernel/git/rostedt/trace-cmd.git/snapshot/trace-cmd-v2.7.tar.gz
 Summary  : No detailed summary available
