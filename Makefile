@@ -1,5 +1,5 @@
 PKG_NAME := trace-cmd
-URL = https://git.kernel.org/pub/scm/linux/kernel/git/rostedt/trace-cmd.git/snapshot/trace-cmd-v2.8.3.tar.gz
+URL = https://git.kernel.org/pub/scm/linux/kernel/git/rostedt/trace-cmd.git/snapshot/trace-cmd-v2.9.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

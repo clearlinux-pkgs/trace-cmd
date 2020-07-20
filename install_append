@@ -1,0 +1,2 @@
+mkdir -p %{buildroot}/usr/share/bash_completion.d
+mv %{buildroot}/usr/etc/bash_completion.d/trace-cmd.bash  %{buildroot}/usr/share/bash_completion.d
