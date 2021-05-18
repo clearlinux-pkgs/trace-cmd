@@ -4,7 +4,7 @@
 #
 Name     : trace-cmd
 Version  : 2.9.3
-Release  : 8
+Release  : 9
 URL      : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Source0  : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Summary  : No detailed summary available
@@ -46,14 +46,6 @@ Requires: trace-cmd = %{version}-%{release}
 dev components for the trace-cmd package.
 
 
-%package extras
-Summary: extras components for the trace-cmd package.
-Group: Default
-
-%description extras
-extras components for the trace-cmd package.
-
-
 %package lib
 Summary: lib components for the trace-cmd package.
 Group: Libraries
@@ -80,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621363535
+export SOURCE_DATE_EPOCH=1621363634
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -90,12 +82,26 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1621363535
+export SOURCE_DATE_EPOCH=1621363634
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/trace-cmd
 cp %{_builddir}/trace-cmd-v2.9.3/COPYING %{buildroot}/usr/share/package-licenses/trace-cmd/29156b719d2cbb6630525c4f4d4a4657ef76649a
 cp %{_builddir}/trace-cmd-v2.9.3/COPYING.LIB %{buildroot}/usr/share/package-licenses/trace-cmd/1927bd74419ad757a1d8e010f558c162bc7a4721
 %make_install prefix=/usr libdir=/usr/lib64 install_libs
+## Remove excluded files
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_blk.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_cfg80211.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_function.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_futex.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_hrtimer.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_jbd2.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_kmem.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_kvm.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_mac80211.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_sched_switch.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_scsi.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_tlb.so
+rm -f %{buildroot}/usr/lib64/traceevent/plugins/plugin_xen.so
 ## install_append content
 mkdir -p %{buildroot}/usr/share/bash_completion.d
 #mv %{buildroot}/usr/etc/bash_completion.d/trace-cmd.bash  %{buildroot}/usr/share/bash_completion.d
@@ -113,22 +119,6 @@ mkdir -p %{buildroot}/usr/share/bash_completion.d
 /usr/include/trace-cmd/trace-cmd.h
 /usr/lib64/libtracecmd.so
 /usr/lib64/pkgconfig/libtracecmd.pc
-
-%files extras
-%defattr(-,root,root,-)
-/usr/lib64/traceevent/plugins/plugin_blk.so
-/usr/lib64/traceevent/plugins/plugin_cfg80211.so
-/usr/lib64/traceevent/plugins/plugin_function.so
-/usr/lib64/traceevent/plugins/plugin_futex.so
-/usr/lib64/traceevent/plugins/plugin_hrtimer.so
-/usr/lib64/traceevent/plugins/plugin_jbd2.so
-/usr/lib64/traceevent/plugins/plugin_kmem.so
-/usr/lib64/traceevent/plugins/plugin_kvm.so
-/usr/lib64/traceevent/plugins/plugin_mac80211.so
-/usr/lib64/traceevent/plugins/plugin_sched_switch.so
-/usr/lib64/traceevent/plugins/plugin_scsi.so
-/usr/lib64/traceevent/plugins/plugin_tlb.so
-/usr/lib64/traceevent/plugins/plugin_xen.so
 
 %files lib
 %defattr(-,root,root,-)
