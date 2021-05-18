@@ -1,1 +1,1 @@
-prefix=/usr libdir=/usr/lib64
+prefix=/usr libdir=/usr/lib64 install_libs

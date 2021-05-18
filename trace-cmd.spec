@@ -4,7 +4,7 @@
 #
 Name     : trace-cmd
 Version  : 2.9.3
-Release  : 7
+Release  : 8
 URL      : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Source0  : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Summary  : No detailed summary available
@@ -46,6 +46,14 @@ Requires: trace-cmd = %{version}-%{release}
 dev components for the trace-cmd package.
 
 
+%package extras
+Summary: extras components for the trace-cmd package.
+Group: Default
+
+%description extras
+extras components for the trace-cmd package.
+
+
 %package lib
 Summary: lib components for the trace-cmd package.
 Group: Libraries
@@ -72,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621362446
+export SOURCE_DATE_EPOCH=1621363535
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -82,16 +90,15 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1621362446
+export SOURCE_DATE_EPOCH=1621363535
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/trace-cmd
 cp %{_builddir}/trace-cmd-v2.9.3/COPYING %{buildroot}/usr/share/package-licenses/trace-cmd/29156b719d2cbb6630525c4f4d4a4657ef76649a
 cp %{_builddir}/trace-cmd-v2.9.3/COPYING.LIB %{buildroot}/usr/share/package-licenses/trace-cmd/1927bd74419ad757a1d8e010f558c162bc7a4721
-%make_install prefix=/usr libdir=/usr/lib64
+%make_install prefix=/usr libdir=/usr/lib64 install_libs
 ## install_append content
 mkdir -p %{buildroot}/usr/share/bash_completion.d
 #mv %{buildroot}/usr/etc/bash_completion.d/trace-cmd.bash  %{buildroot}/usr/share/bash_completion.d
-%make_install prefix=/usr libdir=/usr/lib64 install_libs
 ## install_append end
 
 %files
@@ -107,10 +114,8 @@ mkdir -p %{buildroot}/usr/share/bash_completion.d
 /usr/lib64/libtracecmd.so
 /usr/lib64/pkgconfig/libtracecmd.pc
 
-%files lib
+%files extras
 %defattr(-,root,root,-)
-/usr/lib64/libtracecmd.so.0
-/usr/lib64/libtracecmd.so.0.0.1
 /usr/lib64/traceevent/plugins/plugin_blk.so
 /usr/lib64/traceevent/plugins/plugin_cfg80211.so
 /usr/lib64/traceevent/plugins/plugin_function.so
@@ -124,6 +129,11 @@ mkdir -p %{buildroot}/usr/share/bash_completion.d
 /usr/lib64/traceevent/plugins/plugin_scsi.so
 /usr/lib64/traceevent/plugins/plugin_tlb.so
 /usr/lib64/traceevent/plugins/plugin_xen.so
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libtracecmd.so.0
+/usr/lib64/libtracecmd.so.0.0.1
 
 %files license
 %defattr(0644,root,root,0755)

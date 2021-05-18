@@ -1,0 +1,13 @@
+/usr/lib64/traceevent/plugins/plugin_blk.so
+/usr/lib64/traceevent/plugins/plugin_cfg80211.so
+/usr/lib64/traceevent/plugins/plugin_function.so
+/usr/lib64/traceevent/plugins/plugin_futex.so
+/usr/lib64/traceevent/plugins/plugin_hrtimer.so
+/usr/lib64/traceevent/plugins/plugin_jbd2.so
+/usr/lib64/traceevent/plugins/plugin_kmem.so
+/usr/lib64/traceevent/plugins/plugin_kvm.so
+/usr/lib64/traceevent/plugins/plugin_mac80211.so
+/usr/lib64/traceevent/plugins/plugin_sched_switch.so
+/usr/lib64/traceevent/plugins/plugin_scsi.so
+/usr/lib64/traceevent/plugins/plugin_tlb.so
+/usr/lib64/traceevent/plugins/plugin_xen.so
