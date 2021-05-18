@@ -1,2 +1,3 @@
 mkdir -p %{buildroot}/usr/share/bash_completion.d
 #mv %{buildroot}/usr/etc/bash_completion.d/trace-cmd.bash  %{buildroot}/usr/share/bash_completion.d
+%make_install prefix=/usr libdir=/usr/lib64 install_libs 

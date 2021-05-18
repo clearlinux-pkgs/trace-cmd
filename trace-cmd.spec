@@ -4,7 +4,7 @@
 #
 Name     : trace-cmd
 Version  : 2.9.3
-Release  : 6
+Release  : 7
 URL      : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Source0  : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v2.9.3.tar.gz
 Summary  : No detailed summary available
@@ -14,6 +14,12 @@ Requires: trace-cmd-bin = %{version}-%{release}
 Requires: trace-cmd-lib = %{version}-%{release}
 Requires: trace-cmd-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
+BuildRequires : doxygen
+BuildRequires : freeglut-dev
+BuildRequires : glu-dev
+BuildRequires : json-c-dev
+BuildRequires : mesa-dev
+BuildRequires : qtbase-dev
 
 %description
 For more information on contributing please see: https://www.trace-cmd.org
@@ -26,6 +32,18 @@ Requires: trace-cmd-license = %{version}-%{release}
 
 %description bin
 bin components for the trace-cmd package.
+
+
+%package dev
+Summary: dev components for the trace-cmd package.
+Group: Development
+Requires: trace-cmd-lib = %{version}-%{release}
+Requires: trace-cmd-bin = %{version}-%{release}
+Provides: trace-cmd-devel = %{version}-%{release}
+Requires: trace-cmd = %{version}-%{release}
+
+%description dev
+dev components for the trace-cmd package.
 
 
 %package lib
@@ -54,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621361926
+export SOURCE_DATE_EPOCH=1621362446
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -64,7 +82,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1621361926
+export SOURCE_DATE_EPOCH=1621362446
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/trace-cmd
 cp %{_builddir}/trace-cmd-v2.9.3/COPYING %{buildroot}/usr/share/package-licenses/trace-cmd/29156b719d2cbb6630525c4f4d4a4657ef76649a
@@ -73,6 +91,7 @@ cp %{_builddir}/trace-cmd-v2.9.3/COPYING.LIB %{buildroot}/usr/share/package-lice
 ## install_append content
 mkdir -p %{buildroot}/usr/share/bash_completion.d
 #mv %{buildroot}/usr/etc/bash_completion.d/trace-cmd.bash  %{buildroot}/usr/share/bash_completion.d
+%make_install prefix=/usr libdir=/usr/lib64 install_libs
 ## install_append end
 
 %files
@@ -82,8 +101,16 @@ mkdir -p %{buildroot}/usr/share/bash_completion.d
 %defattr(-,root,root,-)
 /usr/bin/trace-cmd
 
+%files dev
+%defattr(-,root,root,-)
+/usr/include/trace-cmd/trace-cmd.h
+/usr/lib64/libtracecmd.so
+/usr/lib64/pkgconfig/libtracecmd.pc
+
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/libtracecmd.so.0
+/usr/lib64/libtracecmd.so.0.0.1
 /usr/lib64/traceevent/plugins/plugin_blk.so
 /usr/lib64/traceevent/plugins/plugin_cfg80211.so
 /usr/lib64/traceevent/plugins/plugin_function.so
