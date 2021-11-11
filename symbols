@@ -198,6 +198,7 @@ libtracecmd.so.0.0.1:tracecmd_get_use_trace_clock
 libtracecmd.so.0.0.1:tracecmd_hooks
 libtracecmd.so.0.0.1:tracecmd_init_data
 libtracecmd.so.0.0.1:tracecmd_is_buffer_instance
+libtracecmd.so.0.0.1:tracecmd_is_version_supported
 libtracecmd.so.0.0.1:tracecmd_load_plugins
 libtracecmd.so.0.0.1:tracecmd_long_size
 libtracecmd.so.0.0.1:tracecmd_make_pipe
