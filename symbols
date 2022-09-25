@@ -54,6 +54,7 @@ libtracecmd.so.1:tracecmd_create_recorder_maxkb
 libtracecmd.so.1:tracecmd_create_recorder_virt
 libtracecmd.so.1:tracecmd_default_file_version
 libtracecmd.so.1:tracecmd_enable_tsync
+libtracecmd.so.1:tracecmd_filter_add
 libtracecmd.so.1:tracecmd_filter_id_add
 libtracecmd.so.1:tracecmd_filter_id_clear
 libtracecmd.so.1:tracecmd_filter_id_compare
@@ -64,6 +65,7 @@ libtracecmd.so.1:tracecmd_filter_id_hash_free
 libtracecmd.so.1:tracecmd_filter_id_remove
 libtracecmd.so.1:tracecmd_filter_ids
 libtracecmd.so.1:tracecmd_flush_recording
+libtracecmd.so.1:tracecmd_follow_event
 libtracecmd.so.1:tracecmd_free_hooks
 libtracecmd.so.1:tracecmd_free_record
 libtracecmd.so.1:tracecmd_free_recorder
@@ -72,6 +74,7 @@ libtracecmd.so.1:tracecmd_ftrace_load_options
 libtracecmd.so.1:tracecmd_ftrace_overrides
 libtracecmd.so.1:tracecmd_generate_traceid
 libtracecmd.so.1:tracecmd_get_cpu_file_size
+libtracecmd.so.1:tracecmd_get_cpu_map
 libtracecmd.so.1:tracecmd_get_cpustats
 libtracecmd.so.1:tracecmd_get_cursor
 libtracecmd.so.1:tracecmd_get_debug
@@ -81,11 +84,13 @@ libtracecmd.so.1:tracecmd_get_first_ts
 libtracecmd.so.1:tracecmd_get_flags
 libtracecmd.so.1:tracecmd_get_guest_cpumap
 libtracecmd.so.1:tracecmd_get_in_file_version
+libtracecmd.so.1:tracecmd_get_notimeout
 libtracecmd.so.1:tracecmd_get_options_offset
 libtracecmd.so.1:tracecmd_get_out_file_offset
 libtracecmd.so.1:tracecmd_get_out_file_version
 libtracecmd.so.1:tracecmd_get_output_handle_fd
 libtracecmd.so.1:tracecmd_get_parsing_failures
+libtracecmd.so.1:tracecmd_get_private
 libtracecmd.so.1:tracecmd_get_quiet
 libtracecmd.so.1:tracecmd_get_show_data_func
 libtracecmd.so.1:tracecmd_get_tep
@@ -98,11 +103,19 @@ libtracecmd.so.1:tracecmd_hooks
 libtracecmd.so.1:tracecmd_init_data
 libtracecmd.so.1:tracecmd_is_buffer_instance
 libtracecmd.so.1:tracecmd_is_version_supported
+libtracecmd.so.1:tracecmd_iterate_events
+libtracecmd.so.1:tracecmd_iterate_events_multi
 libtracecmd.so.1:tracecmd_latency_data_read
 libtracecmd.so.1:tracecmd_load_chunks_info
 libtracecmd.so.1:tracecmd_load_plugins
 libtracecmd.so.1:tracecmd_long_size
 libtracecmd.so.1:tracecmd_make_pipe
+libtracecmd.so.1:tracecmd_map_find_by_host_pid
+libtracecmd.so.1:tracecmd_map_get_guest
+libtracecmd.so.1:tracecmd_map_get_host_pid
+libtracecmd.so.1:tracecmd_map_get_private
+libtracecmd.so.1:tracecmd_map_set_private
+libtracecmd.so.1:tracecmd_map_vcpus
 libtracecmd.so.1:tracecmd_msg_collect_data
 libtracecmd.so.1:tracecmd_msg_cont
 libtracecmd.so.1:tracecmd_msg_data_send
@@ -188,7 +201,9 @@ libtracecmd.so.1:tracecmd_set_debug
 libtracecmd.so.1:tracecmd_set_flag
 libtracecmd.so.1:tracecmd_set_logfile
 libtracecmd.so.1:tracecmd_set_loglevel
+libtracecmd.so.1:tracecmd_set_notimeout
 libtracecmd.so.1:tracecmd_set_out_clock
+libtracecmd.so.1:tracecmd_set_private
 libtracecmd.so.1:tracecmd_set_quiet
 libtracecmd.so.1:tracecmd_set_show_data_func
 libtracecmd.so.1:tracecmd_set_ts2secs
