@@ -66,6 +66,7 @@ libtracecmd.so.1:tracecmd_filter_id_remove
 libtracecmd.so.1:tracecmd_filter_ids
 libtracecmd.so.1:tracecmd_flush_recording
 libtracecmd.so.1:tracecmd_follow_event
+libtracecmd.so.1:tracecmd_follow_missed_events
 libtracecmd.so.1:tracecmd_free_hooks
 libtracecmd.so.1:tracecmd_free_record
 libtracecmd.so.1:tracecmd_free_recorder
