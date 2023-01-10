@@ -152,6 +152,7 @@ libtracecmd.so.1:tracecmd_open_head
 libtracecmd.so.1:tracecmd_output_close
 libtracecmd.so.1:tracecmd_output_create
 libtracecmd.so.1:tracecmd_output_create_fd
+libtracecmd.so.1:tracecmd_output_flush
 libtracecmd.so.1:tracecmd_output_free
 libtracecmd.so.1:tracecmd_output_set_compression
 libtracecmd.so.1:tracecmd_output_set_from_input
