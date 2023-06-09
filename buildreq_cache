@@ -1,0 +1,8 @@
+3.2
+asciidoc
+pkgconfig(audit)
+pkgconfig(cunit)
+pkgconfig(libzstd)
+swig
+xmlto
+zlib-dev
