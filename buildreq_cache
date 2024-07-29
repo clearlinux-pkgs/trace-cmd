@@ -1,8 +1,9 @@
-3.2
+3.3
 asciidoc
 pkgconfig(audit)
 pkgconfig(cunit)
 pkgconfig(libzstd)
+python3-dev
 swig
 xmlto
 zlib-dev
