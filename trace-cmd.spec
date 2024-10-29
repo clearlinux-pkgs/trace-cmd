@@ -7,7 +7,7 @@
 #
 Name     : trace-cmd
 Version  : 3.3.1
-Release  : 24
+Release  : 25
 URL      : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v3.3.1.tar.gz
 Source0  : https://git.kernel.org/pub/scm/utils/trace-cmd/trace-cmd.git/snapshot/trace-cmd-v3.3.1.tar.gz
 Summary  : No detailed summary available
